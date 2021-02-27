@@ -1,0 +1,16 @@
+[book]
+authors = ["zhangxj"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Mirai's Tech blog"
+
+[output.html]
+mathjax-support = true
+no-section-label = true
+git-repository-url = "https://github.com/draw233/draw233.github.io"
+git-repository-icon = "fa-github"
+
+[output.html.fold]
+enable = false
+level = 0
