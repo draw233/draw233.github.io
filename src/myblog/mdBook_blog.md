@@ -93,12 +93,12 @@ mirai ~/notes/blog  mdbook serve
 
 <script>
 const gitalk = new Gitalk({
-  clientID: '825ac2332229495914c1',
-  clientSecret: 'ac07433c780c008824efa93c4f956b5d05e22a36',
+  clientID: '{{secrets.AOUTH_KEY}}',
+  clientSecret: '{{secrets.OAUTH_SECRET}}',
   repo: 'blog-comment',  // The repository of store comments,
   owner: 'draw233',
   admin: ['draw233'],
-  id: '/posts/mdBook_blog/',      // Ensure uniqueness and length less than 50
+  id: '/posts/mdbook_blog/',      // Ensure uniqueness and length less than 50
   distractionFreeMode: false  // Facebook-like distraction free mode
 })
 
