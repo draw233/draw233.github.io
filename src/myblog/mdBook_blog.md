@@ -78,12 +78,6 @@ mirai ~/notes/blog  mdbook serve
 
 配置公钥和密钥
 
-### Travis Ci
-
-生成 Github TOKEN
-
-添加 `.travis.yml` 文件
-
 ## 参考链接
 
 - [https://github.com/huangjj27/huangjj27.github.io](https://github.com/huangjj27/huangjj27.github.io)
