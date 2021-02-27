@@ -26,6 +26,8 @@ deploy:
   local-dir: ./book
   keep-history: false
   on:
-    branch: master
+    branches: # ← new!
+      only: # ← new!
+        - travis_version # ← new!
   target_branch: master
 
