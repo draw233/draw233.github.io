@@ -76,8 +76,31 @@ mirai ~/notes/blog  mdbook serve
 
 ### GitHub Actions
 
-配置公钥和密钥
+建立 SSH 密钥对
+
+将自动化配置写到 GitHub 仓库
+
+编写工作流文件
 
 ## 参考链接
 
 - [https://github.com/huangjj27/huangjj27.github.io](https://github.com/huangjj27/huangjj27.github.io)
+
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+
+<script>
+const gitalk = new Gitalk({
+  clientID: '825ac2332229495914c1',
+  clientSecret: 'ac07433c780c008824efa93c4f956b5d05e22a36',
+  repo: 'blog-comment',  // The repository of store comments,
+  owner: 'draw233',
+  admin: ['draw233'],
+  id: '/posts/mdBook_blog/',      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+gitalk.render('gitalk-container')
+</script>
