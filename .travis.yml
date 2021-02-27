@@ -29,5 +29,5 @@ deploy:
     branches: # ← new!
       only: # ← new!
         - travis_version # ← new!
-  target_branch: master
+  target_branch: gh-pages
 
