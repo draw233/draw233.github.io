@@ -74,10 +74,6 @@ mirai ~/notes/blog  mdbook serve
   
 ## 发布博客到 Github Pages 
 
-### GitHub Actions
-
-配置公钥和密钥
-
 ### Travis Ci
 
 生成 Github TOKEN
