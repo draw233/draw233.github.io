@@ -72,10 +72,17 @@ mirai ~/notes/blog  mdbook serve
 - 启动博客
   ![](./static/blog_3000.png)
   
-## 通过 Github Pages 发布博客
+## 发布博客到 Github Pages 
 
- 添加 `.travis.yml` 文件
+### GitHub Actions
 
+配置公钥和密钥
+
+### Travis Ci
+
+生成 Github TOKEN
+
+添加 `.travis.yml` 文件
 
 ## 参考链接
 
