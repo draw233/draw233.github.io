@@ -1,14 +1,19 @@
 # 使用`mdBook`编写博客
 
 ## 阅读须知
+
 阅读本文，你可以知道：
-- 一些配置 mdBook 的安装搭建
+
+- 一些mdBook 的安装搭建
+- 发布博客到 `GitHub Pages`
 
 但是，本文不涉及：
-- [mdBook介绍](https://rust-lang.github.io/mdBook/index.html)
+
 - [Rust安装](https://www.rust-lang.org/tools/install)
 - [Cargo代理配置](https://blog.biofan.org/2019/02/cargo-config/)
-- [markdown语法](https://www.runoob.com/markdown/md-tutorial.html)
+- [Markdown语法](https://www.runoob.com/markdown/md-tutorial.html)
+- [GitHub Actions 快速入门](https://docs.github.com/en/actions/quickstart)
+- [Gitalk 使用](https://gitalk.github.io/)
 
 ## 安装 `mdbook`
 
@@ -57,34 +62,56 @@ mirai ~/notes/blog  mdbook serve
 2021-02-27 21:34:40 [INFO] (mdbook::cmd::watch): Listening for changes...
 
 ```
-在浏览器输入 http://127.0.0.1:3000 便可以访问博客了
+
+在浏览器输入 <http://127.0.0.1:3000> 便可以访问博客了
 
 ## 编辑博客
 
 使用喜欢的编辑器打开 blog
 
 - 创建文档 `myblog/index.md`
-  ![](./static/blog_edit1.png)  
+
+  ![blog_edit1](static/blog_edit1.png)
 
 - 在 `SUMMARY.md` 添加链接
-  ![](./static/blog_edit2.png)
+
+  ![blog_edit2](static/blog_edit2.png)
 
 - 启动博客
-  ![](./static/blog_3000.png)
+
+  ![blog_3000](static/blog_3000.png)
   
-## 发布博客到 Github Pages 
+## 添加GitHub Actions
 
-### GitHub Actions
+配置秘钥
 
-建立 SSH 密钥对
+  1. 生成 SSH 密钥对
 
-将自动化配置写到 GitHub 仓库
+  2. 配置秘钥
 
-编写工作流文件
+      > 进入xxx.github.io项目，点击 `Settings-> Secrets-> New repository secrets`,Name `ACTIONS_DEPLOY_KEY`, Value 为秘钥
+
+  3. 配置公钥
+
+      > 进入xxx.github.io项目，点击 `Settings-> Deploy keys -> add deploy key`,Title 为 `pub_rsa`, Value 为公钥。最后勾选 【Allow write access】，点击 Add key。
+
+开启GitHub Actions
+
+   > 进入xxx.github.io项目,点击`Actions`,选择 Rust 项目的，点击`Set up this workflow`
+
+编辑`.github/workflows/xxx.yml文件`
+
+> `deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}` 中的`ACTIONS_DEPLOY_KEY`就是秘钥
+
+每次代码更新都会触发构建，最后在 <xxx.github.io> 可看到页面效果。
+
+## 如何使用 Github Pages
+
+  这个就直接参考其他博客吧~~
 
 ## 参考链接
 
-- [https://github.com/huangjj27/huangjj27.github.io](https://github.com/huangjj27/huangjj27.github.io)
+- [mdBook介绍](https://rust-lang.github.io/mdBook/index.html)
 
 ---
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
